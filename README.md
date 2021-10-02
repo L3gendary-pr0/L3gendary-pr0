@@ -1,7 +1,8 @@
 💭This is L3gendary-pr0💭 <br/>
 🔰A pro LUA programmer🔰 <br/>
-💻Accepting short term tasks💻
-
+💻Accepting short term tasks only💻 <br/>
+📌Payment only in Robux 100R$ - 10k R$📌 <br/>
+📋Available on discord Legendary#0232📋
 <br/>
  <br/>
 🚩Things I can script🚩
