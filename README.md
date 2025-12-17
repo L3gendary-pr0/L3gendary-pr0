@@ -1,8 +1,8 @@
-💭This is L3gendary-pr0💭 <br/>
-🔰A pro LUA programmer🔰 <br/>
-💻Accepting short term tasks only💻 <br/>
-📌Payment only in Robux 100R$ - 10k R$📌 <br/>
-📋Available on discord Legendary#0232📋
+💭This is L3gendary_pr0💭 <br/>
+🔰A pro LUAu Roblox programmer🔰 <br/>
+💻Accepting short term tasks only (Can work long term only if the game CCU is 100+💻 <br/>
+📌Payment only in USD (min $20) or equivalent Robux with Devex rate📌 <br/>
+📋Available on discord legendary_. 📋
 <br/>
  <br/>
 🚩Things I can script🚩
@@ -29,9 +29,9 @@
 -Team only shop <br/>
 -Team only tools <br/>
 -Team uniform/clothes <br/>
--Double jump <br/>
+-AND MUCH MORE <br/>
  <br/>
-😎DM me on discord Legendary#0232😎
+😎DM me on discord legendary_. 😎
 
 <br/>
 
