@@ -79,7 +79,7 @@ module.PileUp = function(plr,itemName,count) -- To pile up items
 			if plr.Character.HumanoidRootPart:FindFirstChild('PopSound') then
 				plr.Character.HumanoidRootPart.PopSound:Play() 
 			end
-			wait(PileUpTime)
+			task.wait(PileUpTime)
 		until count<=0 or not plr.Character
 	end
 end
@@ -106,7 +106,7 @@ module.PileUpOnce = function(plr,itemName) -- if settings is set to pile up once
 		if plr.Character.HumanoidRootPart:FindFirstChild('PopSound') then
 			plr.Character.HumanoidRootPart.PopSound:Play() 
 		end
-		wait(PileUpTime)
+		task.wait(PileUpTime)
 	end
 end
 
@@ -124,7 +124,7 @@ module.PileDown = function(plr,itemName,PileDownPart,count) -- to pile down item
 					plr.Character.HumanoidRootPart.PileDownSound:Play() 
 				end
 				count-=1
-				wait(PileDownTime)
+				task.wait(PileDownTime)
 				item:Destroy()
 			end
 		until count<=0 or item==nil or not plr.Character
@@ -143,7 +143,7 @@ module.PileDownOnce = function(plr,itemName,PileDownPart) -- if settings is set 
 			if plr.Character.HumanoidRootPart:FindFirstChild('PileDownSound') then 
 				plr.Character.HumanoidRootPart.PileDownSound:Play() 
 			end
-			wait(PileDownTime)
+			task.wait(PileDownTime)
 			item:Destroy()
 		end
 	end
@@ -178,7 +178,7 @@ module.PileDownStorage = function(plr,part,itemName,PileDownPart) --for storage 
 			if item:FindFirstChild("WeldConstraint") then item.WeldConstraint:Destroy() end
 			TweenFunction(item.PrimaryPart,PileDownTweenTime,PileDownPart.CFrame)
 			if plr.Character.HumanoidRootPart:FindFirstChild('PileDownSound') then plr.Character.HumanoidRootPart.PileDownSound:Play() end
-			wait(PileDownTime)
+			task.wait(PileDownTime)
 			item:Destroy()
 		end
 	end
@@ -248,7 +248,7 @@ module.HandlingPileUpOrDown = function(plr,NumberValueInItemTransferPart)
 		print(itemName)
 		if itemName then
 			NumberValueInItemTransferPart.Name=itemName
-			spawn(function()
+			task.spawn(function()
 				repeat
 					module.PileDownOnce(plr,itemName,NumberValueInItemTransferPart.Parent)
 					if NumberValueInItemTransferPart.Parent:FindFirstChild('PileUp') then
@@ -256,7 +256,7 @@ module.HandlingPileUpOrDown = function(plr,NumberValueInItemTransferPart)
 					end
 					NumberValueInItemTransferPart.Value+=1
 					TweenInfoUIOfItemTransferPart(NumberValueInItemTransferPart.Parent.InfoUI,NumberValueInItemTransferPart.Value,NumberValueInItemTransferPart.OriginalValue.Value)
-					wait(0.0000000001)
+					task.wait(0.0000000001)
 					CheckIfAffectsOtherItemTransfers(NumberValueInItemTransferPart.Parent)
 				until not plr.Character:FindFirstChild(NumberValueInItemTransferPart.Name) or #plr.Character:FindFirstChild(NumberValueInItemTransferPart.Name):GetChildren()<=0 or NumberValueInItemTransferPart.Value>=0 or not DistanceFromItemTransferPart(plr.Character,NumberValueInItemTransferPart.Parent)
 
@@ -267,7 +267,7 @@ module.HandlingPileUpOrDown = function(plr,NumberValueInItemTransferPart)
 		end
 	elseif NumberValueInItemTransferPart.Value>0 and game.ServerStorage:FindFirstChild(NumberValueInItemTransferPart.Name) then
 		table.insert(TableOfPlrsCurrentlyPileing,plr)
-		spawn(function()
+		task.spawn(function()
 			repeat
 				module.PileUpOnce(plr,NumberValueInItemTransferPart.Name)
 				if NumberValueInItemTransferPart.Parent:FindFirstChild('PileDown') then
@@ -275,7 +275,7 @@ module.HandlingPileUpOrDown = function(plr,NumberValueInItemTransferPart)
 				end
 				NumberValueInItemTransferPart.Value-=1
 				TweenInfoUIOfItemTransferPart(NumberValueInItemTransferPart.Parent.InfoUI,NumberValueInItemTransferPart.Value,NumberValueInItemTransferPart.OriginalValue.Value)
-				wait(0.0000000000001)
+				task.wait(0.0000000000001)
 				CheckIfAffectsOtherItemTransfers(NumberValueInItemTransferPart.Parent)
 			until NumberValueInItemTransferPart.Value<=0 or not DistanceFromItemTransferPart(plr.Character,NumberValueInItemTransferPart.Parent)
 			if table.find(TableOfPlrsCurrentlyPileing,plr) then
